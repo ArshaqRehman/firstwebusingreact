@@ -12,15 +12,17 @@ import Header from '../Header';
 import Footer from '../Footer';
 import { useState } from "react";
 import { addUser } from "../Services/api";
+import { Link } from 'react-router-dom';
 function Usersignup() {
-  const [userData, setuserData]= useState({
+  const initial={
 
     firstname: "",
     secondname: "",
     email: "",
     password: "",
-    confirmpassword: ""
-  })
+    confirmpassword: "",
+  };
+  const [userData, setuserData]= useState(initial);
 
   const {firstname,secondname,email,password,confirmpassword}= userData;
 
@@ -30,8 +32,11 @@ function Usersignup() {
 
   const adduser = async (e)=> {
     e.preventDefault();
+    alert("user added");
     console.log("in sign up"+ userData.email);
     await addUser(userData);
+    setuserData(initial);
+  
   }
 
 
@@ -64,17 +69,22 @@ function Usersignup() {
             </div>
 
             {/* Form Fields */}
-            <MDBInput wrapperClass='mb-4' label='First Name' name='firstname' id='firstname' type='text' size="lg" onChange={(e) => handlechange(e)} />
-<MDBInput wrapperClass='mb-4' label='Last Name' name='secondname' id='secondname' type='text' size="lg" onChange={(e) => handlechange(e)} />
-<MDBInput wrapperClass='mb-4' label='Email' name='email' id='email' type='email' size="lg" onChange={(e) => handlechange(e)} />
-<MDBInput wrapperClass='mb-4' label='Password' name='password' id='password' type='password' size="lg" onChange={(e) => handlechange(e)} />
-<MDBInput wrapperClass='mb-4' label='Confirm Password' name='confirmpassword' id='confirmpassword' type='password' size="lg" onChange={(e) => handlechange(e)} />
+            <MDBInput wrapperClass='mb-4' label='First Name' name='firstname' id='firstname' value={firstname} type='text' size="lg" onChange={(e) => handlechange(e)} />
+<MDBInput wrapperClass='mb-4' label='Last Name' name='secondname' id='secondname' type='text'value={secondname} size="lg" onChange={(e) => handlechange(e)} />
+<MDBInput wrapperClass='mb-4' label='Email' name='email' id='email' type='email' value={email} size="lg" onChange={(e) => handlechange(e)} />
+<MDBInput wrapperClass='mb-4' label='Password' name='password' id='password' value={password} type='password' size="lg" onChange={(e) => handlechange(e)} />
+<MDBInput wrapperClass='mb-4' label='Confirm Password' name='confirmpassword'value={confirmpassword} id='confirmpassword' type='password' size="lg" onChange={(e) => handlechange(e)} />
 
             
             {/* Signup Button */}
             <div className='text-center text-md-start mt-4 pt-2'>
-              <button type="button" className="btn btn-primary" style={{ margin: "4px" }}  onClick={(e)=>adduser(e)}>Sign Up</button>
-              <p className="small fw-bold mt-2 pt-1 mb-2">Already have an account? <a href="http://localhost:3000/login" className="link-danger">Log in</a></p>
+            <Link to="/login">
+              <button type="button" className="btn btn-primary" style={{ margin: "4px" }}  onClick={(e)=>adduser(e)}> Sign Up</button>
+              </Link>
+              <p className="small fw-bold mt-2 pt-1 mb-2">Already have an account? 
+              <Link to="/login">
+              <a  className="link-danger">Log in</a>
+              </Link></p>
             </div>
           </MDBCol>
         </MDBRow>

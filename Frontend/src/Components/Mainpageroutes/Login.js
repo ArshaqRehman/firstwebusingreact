@@ -2,6 +2,7 @@ import React from 'react';
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
 import Header from '../Header';
 import Footer from '../Footer';
+import { Link } from 'react-router-dom';
 
 function Login() {
 
@@ -51,9 +52,9 @@ function Login() {
           <div className='text-center text-md-start mt-4 pt-2'>
           <button type="button" className="btn btn-primary" style={{ margin: "4px" }}>Log in</button>
             <p className="small fw-bold mt-2 pt-1 mb-2">Don't have an account? 
-            
-            <a href="http://localhost:3000/usersignup" className="link-danger">Register</a>
-            
+            <Link to="/usersignup">
+            <a  className="link-danger">Register</a>
+            </Link>
             </p>
           </div>
 

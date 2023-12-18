@@ -13,7 +13,7 @@ function App() {
     <Context> 
       <Routes>
         <Route path="/*" element={<Admin />} />
-        <Route path="/dashboard" element={<Admin />} />
+       
         <Route path="/home" element={<MainPage />} />
         <Route path="/Aboutus" element ={<About/>}/>
         <Route path="/privacypolicy" element= {<Privacypolicy/>}/>
@@ -22,6 +22,7 @@ function App() {
    <Route path="/login" element= {<Login/>}/>
    <Route path="/usersignup" element= {<Usersignup/>}/>
       </Routes>
+      {/* <Usersignup/> */}
     </Context>
   )
 }

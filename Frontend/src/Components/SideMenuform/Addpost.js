@@ -7,7 +7,10 @@ function Addpost() {
     description: "",
     pic: ""
   });
-
+  const handleImageChange = (e) => {
+    setSelectedFile(e.target.files[0]);
+  };
+  const [selectedFile, setSelectedFile] = useState(null);
   const { tittle, description, pic } = userData;
 
   const handleChange = (e) => {
@@ -35,9 +38,9 @@ function Addpost() {
   };
 
   return (
-    <div>
+    <div style={{marginLeft:"50px",marginTop: "3rem"}}>
       <h2>Add Post</h2>
-      <div className="row g-3 align-items-center" style={{ marginTop: "25px" }}>
+      <div className="row g-3 align-items-center">
         <div className="col-auto">
           <label>Post Title</label>
         </div>
@@ -69,7 +72,7 @@ function Addpost() {
           ></textarea>
         </div>
       </div>
-
+{/* 
       <div className="mb-3">
         <label htmlFor="pic" className="form-label">
           Upload Image
@@ -82,7 +85,32 @@ function Addpost() {
           accept=".png, .jpg, .jpeg"
           onChange={(e) => handleChange(e)}
         />
-      </div>
+      </div> */}
+      <div className="form-group" style={{ marginBottom: "15px" }}>
+          <label
+            htmlFor="productImage"
+            style={{ display: "block", fontWeight: "bold"  , color:"black"}}
+          >
+            Add Image:
+          </label>
+          <input
+            type="file"
+            name="productImage"
+            id="productImage"
+            onChange={handleImageChange}
+            multiple
+            required
+            style={{
+              width: "100%",
+              padding: "8px",
+              border: "1px solid #ccc",
+              boxSizing: "border-box",
+              outline: "none",
+              fontSize: "14px",
+              borderRadius: "3px",
+            }}
+          />
+        </div>
 
       <button
         type="button"
