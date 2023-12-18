@@ -50,7 +50,7 @@ const About = () => {
         I am committed to steering <span style={{ fontWeight: 'bold' }}>World Jobs</span> toward becoming a leading online destination
         for job seekers and employers alike. Your trust and engagement inspire
         us to continuously enhance our offerings and make a positive impact on
-        the professional journeys of individuals worldwide.
+        the professional journeys of individuals worldwide.hello from my side
       </p>
 
       <p>
