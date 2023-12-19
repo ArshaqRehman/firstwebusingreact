@@ -1,49 +1,47 @@
 import axios from 'axios';
+const url = "https://firstwebusingreact-436k.vercel.app";
 
 
 //user api
-const API=axios.create({
-  baseURL: "https://firstwebusingreact-436k.vercel.app",
-})
 
 export const  addUser = async(userData) => {
   console.log("cls"+userData)
-  return await API.post(`/usersignup`, userData);
+  return await axios.post(`${url}/usersignup`, userData);
 }
 
 export const getlogin=async ()=>{
-  return await  API.get(`/dashboard/adduser`);
+  return await  axios.get(`${url}/dashboard/adduser`);
 }
 
 export const deleteCustomerbyid = async (id) => {
-  return await API.delete(`/dashboard/adduser/${id}`);
+  return await axios.delete(`${url}/dashboard/adduser/${id}`);
 };
 
 
 
 export const updateloginById = async (id, updatedProduct) => {
-   return await API.put(`/dashboard/adduser/${id}`, updatedProduct);
+   return await axios.put(`${url}/dashboard/adduser/${id}`, updatedProduct);
 }
 
 
 
 // apii Admin
 export const addjob= async (jobData)=>{
-  return  await API.post(`/dashboard/addjob`, jobData);
+  return  await axios.post(`${url}/dashboard/addjob`, jobData);
  }
 
 export const getJob= async ()=>{
   
-  return await  API.get(`/dashboard/media`);
+  return await  axios.get(`${url}/dashboard/media`);
 }
 
 export const deletejob = async (id)=>{
  
-   return await  API.delete(`/dashboard/media/${id}`);
+   return await  axios.delete(`${url}/dashboard/media/${id}`);
  }
 
 
  export const updatejob = async (id, updatedProduct) => {
   
-    return await API.put(`/dashboard/media/${id}`, updatedProduct);
+    return await axios.put(`${url}/dashboard/media/${id}`, updatedProduct);
 };
