@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = "https://firstwebusingreact-436k-bic6nfxf6-arshaq-rehmans-projects.vercel.app";
+const url = "https://firstwebusingreact-436k-43zjxatxr-arshaq-rehmans-projects.vercel.app";
 
 
 //user api
