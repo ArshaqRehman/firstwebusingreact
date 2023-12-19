@@ -25,7 +25,9 @@ app.use("/dashboard/media", getJob);
 app.use("/usersignup",login);
 
 app.use('/dashboard/addjob', addjob);
-
+app.get("/",(req,res)=>{
+  res.send("App is running");
+})
 
 // app.use("/dashboard/media",jobdata);
 
